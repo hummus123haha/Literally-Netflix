@@ -96,46 +96,51 @@ async function showMediaDetails(mediaDetails, mediaType) {
           <h1 class="modal-title">${mediaDetails.title || mediaDetails.name}</h1>
           <div class="modal-buttons">
             <button class="modal-button play" onclick="playMedia('${mediaDetails.id}', '${mediaType}', 1, ${mediaType === 'tv' ? 'true' : 'false'})">
-              ▶ ${mediaType === 'tv' ? 'Play S1:E1' : 'Play'}
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M4 2.69127C4 1.93067 4.81547 1.44851 5.48192 1.81506L22.4069 11.1238C23.0977 11.5037 23.0977 12.4963 22.4069 12.8762L5.48192 22.1849C4.81546 22.5515 4 22.0693 4 21.3087V2.69127Z" fill="currentColor"></path>
+              </svg>
+              Play
             </button>
             <button class="modal-button play2" onclick="playMedia('${mediaDetails.id}', '${mediaType}', 2, ${mediaType === 'tv' ? 'true' : 'false'})">
-              ▶ ${mediaType === 'tv' ? 'Play S1:E1 (Server 2)' : 'Play Server 2'}
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M4 2.69127C4 1.93067 4.81547 1.44851 5.48192 1.81506L22.4069 11.1238C23.0977 11.5037 23.0977 12.4963 22.4069 12.8762L5.48192 22.1849C4.81546 22.5515 4 22.0693 4 21.3087V2.69127Z" fill="currentColor"></path>
+              </svg>
+              Play (Server 2)
             </button>
           </div>
-           <p class="modal-overview">${mediaDetails.overview}</p>
+          <p class="modal-overview">${mediaDetails.overview}</p>
         </div>
       </div>
-       <div class="modal-info">
-         <div class="modal-main-details">
-           <span class="match-score">98% Match</span>
-           <span>${(mediaDetails.release_date || mediaDetails.first_air_date || '').split('-')[0]}</span>
-           <span class="maturity-rating">${ageRating}</span>
-           ${mediaType === 'movie' && mediaDetails.runtime ? `<span>${Math.floor(mediaDetails.runtime / 60)}h ${mediaDetails.runtime % 60}m</span>` : ''}
-           ${mediaType === 'tv' ? `<span>${mediaDetails.number_of_seasons} Season${mediaDetails.number_of_seasons !== 1 ? 's' : ''}</span>` : ''}
-           <span class="quality-badge">HD</span>
-         </div>
-         <div class="modal-additional">
-           <p><strong>Cast:</strong> ${mediaDetails.credits?.cast?.slice(0, 5).map(actor => actor.name).join(', ') || 'N/A'}, more</p>
-           <p><strong>Genres:</strong> ${mediaDetails.genres?.map(g => g.name).join(', ') || 'N/A'}</p>
-           <p><strong>This ${mediaType === 'movie' ? 'movie' : 'show'} is:</strong> Exciting, Action-packed</p> 
-         </div>
-       </div>
-       ${mediaType === 'tv' ? '' : `
-         <div class="similar-content">
-           <h3>More Like This</h3>
-           <div class="similar-grid">
-             ${similarMedia.filter(item => item.poster_path).map(item => `
-               <div class="similar-item" onclick="openMediaDetails(${item.id}, '${mediaType}')">
-                 <img src="${IMAGE_BASE_URL}/w300${item.poster_path}"
-                      alt="${item.title || item.name}"
-                      onerror="this.onerror=null; this.src='https://via.placeholder.com/300x450?text=No+Image';">
-                 <p class="similar-item-title">${item.title || item.name}</p>
-               </div>
-             `).join('')}
-           </div>
-         </div>`}
-    `; // Removed similar content for TV shows to make space for episodes
-
+      <div class="modal-info">
+        <div class="modal-main-details">
+          <span class="match-score">98% Match</span>
+          <span>${(mediaDetails.release_date || mediaDetails.first_air_date || '').split('-')[0]}</span>
+          <span class="maturity-rating">${ageRating}</span>
+          ${mediaType === 'movie' && mediaDetails.runtime ? `<span>${Math.floor(mediaDetails.runtime / 60)}h ${mediaDetails.runtime % 60}m</span>` : ''}
+          ${mediaType === 'tv' ? `<span>${mediaDetails.number_of_seasons} Season${mediaDetails.number_of_seasons !== 1 ? 's' : ''}</span>` : ''}
+          <span class="quality-badge">HD</span>
+        </div>
+        <div class="modal-additional">
+          <p><strong>Cast: </strong>${mediaDetails.credits?.cast?.slice(0, 5).map(actor => actor.name).join(', ') || 'N/A'}, more</p>
+          <p><strong>Genres: </strong>${mediaDetails.genres?.map(g => g.name).join(', ') || 'N/A'}</p>
+          <p><strong>This ${mediaType === 'movie' ? 'movie' : 'show'} is: </strong>Exciting, Action-packed</p> 
+        </div>
+      </div>
+      ${mediaType === 'tv' ? '' : `
+        <div class="similar-content">
+          <h3>More Like This</h3>
+          <div class="similar-grid">
+            ${similarMedia.filter(item => item.poster_path).map(item => `
+              <div class="similar-item" onclick="openMediaDetails(${item.id}, '${mediaType}')">
+                <img src="${IMAGE_BASE_URL}/w300${item.poster_path}"
+                     alt="${item.title || item.name}"
+                     onerror="this.onerror=null; this.src='https://via.placeholder.com/300x450?text=No+Image';">
+                <p class="similar-item-title">${item.title || item.name}</p>
+              </div>
+            `).join('')}
+          </div>
+        </div>`}
+    `;
     mediaInfoDiv.innerHTML = modalContent;
     modal.style.display = 'block';
     document.body.style.overflow = 'hidden'; // Prevent background scroll
@@ -172,7 +177,12 @@ async function showMediaDetails(mediaDetails, mediaType) {
          seasonEpisodeSelection.style.display = 'none'; // Hide if no valid seasons
       }
 
-       // Add similar content section for TV shows here if desired, below episodes
+       // Remove any existing similar content before adding new one    
+       const existingSimilarContent = modal.querySelector('.similar-content:not(:first-child)');
+       if (existingSimilarContent) {
+         existingSimilarContent.remove();
+       }
+
        const similarTvContent = document.createElement('div');
        similarTvContent.className = 'similar-content';
        similarTvContent.innerHTML = `
@@ -186,16 +196,16 @@ async function showMediaDetails(mediaDetails, mediaType) {
               <p class="similar-item-title">${item.title || item.name}</p>
             </div>
           `).join('')}
-        </div>`;
-       modal.querySelector('.modal-content').appendChild(similarTvContent); // Append to modal content
-
+        </div>
+      `;
+       modal.querySelector('.modal-content').appendChild(similarTvContent);  
     } else {
-      seasonEpisodeSelection.style.display = 'none';
-      // Remove any existing similar content added for TV shows if switching back to movie
+      // Remove existing similar content for movies
       const existingSimilarTv = modal.querySelector('.similar-content:last-child');
       if (existingSimilarTv && !mediaInfoDiv.contains(existingSimilarTv)) {
           existingSimilarTv.remove();
       }
+      seasonEpisodeSelection.style.display = 'none';
     }
   } catch (error) {
     console.error('Error showing media details:', error);
@@ -219,13 +229,15 @@ async function displayEpisodes(tvId, seasonNumber) {
     if (episodes && episodes.length > 0) {
       episodeListDiv.innerHTML = episodes.map(episode => `
         <div class="episode-item" onclick="playMedia('${tvId}', 'tv', 1, false, ${seasonNumber}, ${episode.episode_number})">
+          <div class="episode-number">${episode.episode_number}</div>
           <img src="${IMAGE_BASE_URL}/w300${episode.still_path || ''}" alt="Episode ${episode.episode_number}" onerror="this.onerror=null; this.style.display='none';">
           <div class="episode-info">
-            <h4>${episode.episode_number}. ${episode.name}</h4>
+            <h4>${episode.name}</h4>
             <p>${episode.overview || 'No description available.'}</p>
+            <span class="episode-runtime">${episode.runtime ? `${episode.runtime}m` : '42m'}</span>
           </div>
-           <button class="play-episode-btn" onclick="event.stopPropagation(); playMedia('${tvId}', 'tv', 1, false, ${seasonNumber}, ${episode.episode_number})">▶</button>
-           <button class="play-episode-btn server2" onclick="event.stopPropagation(); playMedia('${tvId}', 'tv', 2, false, ${seasonNumber}, ${episode.episode_number})">▶ S2</button>
+          <button class="play-episode-btn" onclick="event.stopPropagation(); playMedia('${tvId}', 'tv', 1, false, ${seasonNumber}, ${episode.episode_number})">▶</button>
+          <button class="play-episode-btn server2" onclick="event.stopPropagation(); playMedia('${tvId}', 'tv', 2, false, ${seasonNumber}, ${episode.episode_number})">▶</button>
         </div>
       `).join('');
     } else {
@@ -246,11 +258,11 @@ function updatePlayButtonsForSeason(tvId, seasonNumber) {
     const playButton1 = document.querySelector('.modal-button.play');
     const playButton2 = document.querySelector('.modal-button.play2');
     if (playButton1) {
-        playButton1.textContent = `▶ Play S${seasonNumber}:E1`;
+        playButton1.textContent = `Play S${seasonNumber}:E1`;
         playButton1.onclick = () => playMedia(tvId, 'tv', 1, true, seasonNumber, 1);
     }
     if (playButton2) {
-        playButton2.textContent = `▶ Play S${seasonNumber}:E1 (Server 2)`;
+        playButton2.textContent = `Play S${seasonNumber}:E1 (Server 2)`;
         playButton2.onclick = () => playMedia(tvId, 'tv', 2, true, seasonNumber, 1);
     }
 }
@@ -349,58 +361,76 @@ async function playMedia(id, mediaType, server, isHeaderPlay = false, seasonNum 
 }
 
 /**
- * Update the hero section with a trending media item
+ * Update the hero section with a procedurally generated (random) media item.
+ * - Any movie or TV show can be the featured film.
+ * - If the description is too long (>220 chars), generative AI paraphrases it.
  */
 async function updateHeroSection() {
   try {
-    const trending = await fetchMedia('/trending/all/week', {});
-    if (trending && trending.length > 0) {
-      const validTrending = trending.filter(item => item.backdrop_path);
-      if (validTrending.length === 0) {
-        console.error('No valid backdrop images available');
-        return;
-      }
-      
-      const featured = validTrending[Math.floor(Math.random() * validTrending.length)];
+    // Fetch a wider variety of media to ensure "any" can be featured
+    // Combine trending (all), movie popular, tv popular, etc.
+    const results = [];
 
-      // Fetch full details to get the complete overview
-      const fullDetails = await fetchMediaDetails(featured.id, featured.media_type);
-      
-      const heroSection = document.getElementById('heroSection');
-      const heroTitle = document.getElementById('heroTitle');
-      const heroDescription = document.getElementById('heroDescription');
+    const trendingAll = await fetchMedia('/trending/all/week', {});
+    if (trendingAll && trendingAll.length) results.push(...trendingAll);
 
-      heroSection.style.backgroundImage = `
-        linear-gradient(to bottom, 
-          rgba(20, 20, 20, 0) 0%, 
-          rgba(20, 20, 20, 0.8) 60%, 
-          rgba(20, 20, 20, 0.9) 100%),
-        url(${IMAGE_BASE_URL}/original${featured.backdrop_path})
-      `;
-      
-      heroTitle.textContent = featured.title || featured.name;
+    const popularMovies = await fetchMedia('/movie/popular', {});
+    if (popularMovies && popularMovies.length) results.push(...popularMovies);
 
-      // Process the overview with AI to make it more concise and engaging
-      const description = fullDetails?.overview || featured.overview || '';
-      if (description) {
-        const completion = await websim.chat.completions.create({
-          messages: [
-            {
-              role: "system",
-              content: "You are a movie marketing expert. Rewrite the following movie description to be more concise and engaging (max 2 sentences):"
-            },
-            {
-              role: "user",
-              content: description
-            }
-          ]
-        });
-        heroDescription.textContent = completion.content;
-      }
-      
-      heroSection.dataset.mediaId = featured.id;
-      heroSection.dataset.mediaType = featured.media_type;
+    const popularTV = await fetchMedia('/tv/popular', {});
+    if (popularTV && popularTV.length) results.push(...popularTV);
+
+    // Filter to those with a usable backdrop image
+    const validCandidates = results.filter(item => !!item.backdrop_path);
+
+    if (!validCandidates.length) {
+      console.error('Unable to find any valid featured candidates.');
+      return;
     }
+
+    // Randomly pick one from all candidates
+    const featured = validCandidates[Math.floor(Math.random() * validCandidates.length)];
+
+    // Fetch more details for proper overview
+    const mediaType = featured.media_type || (featured.title ? 'movie' : 'tv');
+    const fullDetails = await fetchMediaDetails(featured.id, mediaType);
+
+    const heroSection = document.getElementById('heroSection');
+    const heroTitle = document.getElementById('heroTitle');
+    const heroDescription = document.getElementById('heroDescription');
+
+    heroSection.style.backgroundImage = `
+      linear-gradient(to bottom, 
+        rgba(20, 20, 20, 0) 0%, 
+        rgba(20, 20, 20, 0.8) 60%, 
+        rgba(20, 20, 20, 0.9) 100%),
+      url(${IMAGE_BASE_URL}/original${featured.backdrop_path})
+    `;
+    
+    heroTitle.textContent = featured.title || featured.name;
+
+    const description = fullDetails?.overview || featured.overview || '';
+    if (description && description.length > 220) {
+      // If too long, paraphrase with AI
+      const completion = await websim.chat.completions.create({
+        messages: [
+          {
+            role: "system",
+            content: "You are a movie marketing expert. The following is a movie or TV show description. Rewrite it in a more concise and engaging way, max 2 sentences, keep it snappy."
+          },
+          {
+            role: "user",
+            content: description
+          }
+        ]
+      });
+      heroDescription.textContent = completion.content;
+    } else {
+      heroDescription.textContent = description;
+    }
+
+    heroSection.dataset.mediaId = featured.id;
+    heroSection.dataset.mediaType = mediaType;
   } catch (error) {
     console.error('Error updating hero section:', error);
   }
