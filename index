@@ -1,166 +1,72 @@
-
 <!DOCTYPE html>
-
-<html lang="en-US">
-
+<html>
 <head>
-    <meta http-equiv="X-UA-Compatible" content="IE=10.000">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="content-type" content="text/html;charset=UTF-8">
-    <meta http-equiv="cache-control" content="no-cache,no-store">
-    <meta http-equiv="pragma" content="no-cache">
-    <meta http-equiv="expires" content="-1">
-    <title> LAUSD Schoology Login</title>
-
-    <link rel="apple-touch-icon" sizes="72x72" href="/assets/images/ico/72.png" />
-    <link rel="shortcut icon" href="/assets/images/ico/72.png" />
-    <link rel="stylesheet" type="text/css" href="/assets/css/main.css?v1">
-    <style>
-        .headerlogo {
-            max-width: 200px;
-        }
-
-        .footerlink a {
-            color: #fff;
-            text-decoration: underline;
-            font-size: 15px;
-        }
-
-        @media screen and (max-width: 850px) {
-            .headerlogo {
-                max-width: 130px;
-            }
-        }
-    </style>
-
-
-        <APM_DO_NOT_TOUCH>
-
-            <script language="javascript">
-
-                (function () {
-
-                    window.wqMP = !!window.wqMP; try {
-                        (function () {
-                            try { var LL, oL, ZL = 1, _L = 1, IL = 1, jL = 1; for (var lL = 0; lL < oL; ++lL)ZL += 2, _L += 2, IL += 2, jL += 3; LL = ZL + _L + IL + jL; window.ii === LL && (window.ii = ++LL) } catch (So) { window.ii = LL } var _o = !0; function jo(L) { !L || document.visibilityState && "visible" !== document.visibilityState || (_o = !1, document.cookie = "brav=ad"); return _o } function Jo() { } jo(window[Jo.name] === Jo); jo("function" !== typeof ie9rgb4); jo(/\x3c/.test(function () { return "\x3c" }) & !/x3d/.test(function () { return "'x3'+'d';" }));
-                            var lo = window.attachEvent || /mobi/i.test(window["\x6e\x61vi\x67a\x74\x6f\x72"]["\x75\x73e\x72A\x67\x65\x6et"]), OO = +new Date + 6E5, JO, Lz, oz, Oz = setTimeout, zz = lo ? 3E4 : 6E3; function sz() { if (!document.querySelector) return !0; var L = +new Date, Z = L > OO; if (Z) return jo(!1); Z = Lz && !oz && JO + zz < L; Z = jo(Z); JO = L; Lz || (Lz = !0, Oz(function () { Lz = !1 }, 1)); return Z } sz();
-                            document.addEventListener && document.addEventListener("visibilitychange", function (L) { document.visibilityState && ("hidden" === document.visibilityState && L.isTrusted ? oz = !0 : "visible" === document.visibilityState && (JO = +new Date, oz = !1, sz())) }); var Sz = [17795081, 27611931586, 1558153217]; function _z(L) { L = "string" === typeof L ? L : L.toString(36); var Z = window[L]; if (!Z.toString) return; var S = "" + Z; window[L] = function (L, S) { Lz = !1; return Z(L, S) }; window[L].toString = function () { return S } } for (var Iz = 0; Iz < Sz.length; ++Iz)_z(Sz[Iz]);
-                            jo(!1 !== window.wqMP); (function () { var L = { decrypt: function (L) { try { return JSON.parse(function (L) { L = L.split("l"); var Z = ""; for (var S = 0; S < L.length; ++S)Z += String.fromCharCode(L[S]); return Z }(L)) } catch (S) { } } }; return L = { configuration: L.decrypt("123l34l97l99l116l105l118l101l34l58l34l110l111l34l44l34l100l101l98l117l103l103l105l110l103l34l58l34l110l111l34l44l34l109l111l100l117l108l101l49l34l58l34l101l110l97l98l108l101l100l34l44l34l109l111l100l117l108l101l50l34l58l34l101l110l97l98l108l101l100l34l44l34l109l111l100l117l108l101l51l34l58l34l101l110l97l98l108l101l100l34l44l34l109l111l100l117l108l101l52l34l58l34l101l110l97l98l108l101l100l34l125") } })();
-                            var jz = 46; window.oj = { ZJ: "0807ddbdac81b00031213dee575f8fa987e6463493d0f9a10a0d165d62a1c56f92a43960a8707697044ca9088b06da74dde1c957d52dd0edf2a58f202ebbf645bd6d209c8303d9caca477a52be52b9f3fdbf6ebe1adf4f19c59e2fbe667b4a088567ed2e37fb5278ddbbaf5eca3b61dec12b2aa820c86458d8c755b80f211593a650a6b814966ba96ee0b22411c76ff99e55fe78df7fb15e27233e578a72755fef5cedb3dd02bc8a0cb2be12abba38229b1b8581ec75ea8a" }; function O(L) { return 208 > L } function z(L) { var Z = arguments.length, S = []; for (var I = 1; I < Z; ++I)S.push(arguments[I] - L); return String.fromCharCode.apply(String, S) } function s(L, Z) { L += Z; return L.toString(36) } (function lz(Z) { Z && "number" !== typeof Z || ("number" !== typeof Z && (Z = 1E3), Z = Math.max(Z, 1), setInterval(function () { lz(Z - 10) }, Z)) })(_o);
-                        })();
-                    } catch (x) { document.cookie = 'brav=oex' + x; } finally { ie9rgb4 = void (0); }; function ie9rgb4(a, b) { return a >> b >> 0 };
-
-                })();
-
-            </script>
-        </APM_DO_NOT_TOUCH>
-        <script>
-            (function (i, s, o, g, r, a, m) {
-                i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
-                    (i[r].q = i[r].q || []).push(arguments)
-                }, i[r].l = 1 * new Date(); a = s.createElement(o),
-                    m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
-            })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
-
-            ga('create', 'UA-109196305-1', 'auto');
-            ga('set', 'page', '/PA-SchoologyPickerPage');
-            ga('send', 'pageview');
-        </script>
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-540CHRD6ET"></script>
-        <script>
-            window.dataLayer = window.dataLayer || [];
-            function gtag() { dataLayer.push(arguments); }
-            gtag('js', new Date());
-
-            gtag('config', 'G-540CHRD6ET');
-        </script>
-
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Netflix - Streaming Movies and TV Shows</title>
+  <link href="https://fonts.googleapis.com/css2?family=Netflix+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <link rel="stylesheet" href="styles.css">
 </head>
-
-
-<body dir="ltr" class="body">
-
-
-    <div id="fullPage">
-
-        <div id="contentWrapper" class="float">
-            <div id="content">
-                <div id="header">
-                    <img src="/assets/images/schoology/LAUSD_Seal.png" class="headerlogo" alt="LAUSD logo" style="margin-right: 10px" />
-                    <img src="/assets/images/schoology/schoologyLogo.png" class="headerlogo" alt="Schoology logo" />
-                </div>
-                
-
-
-    <div id="language" class="bluebackground" >
-        <a class="" style="color:#fff" href="/es?destination=home&amp;domain=lms.lausd.net&amp;timestamp=1742080559">En Español</a>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg" alt="FlixHub" class="logo">
+    <div class="nav-links">
+      <a href="#" class="active">Home</a>
+      <a href="#" id="moviesButton">Movies</a>
+      <a href="#" id="tvShowsButton">TV Shows</a>
     </div>
-
-                <div id="workArea">
-                    <div id="authArea" class="groupMargin">
-                        <div>
-                            <br><br><br>
-                            <div role="heading" aria-level="1" id="loginMessage" class="groupMargin" style="margin-bottom: 20px; font-weight:bold; font-size: 20px">
-                                To login to Schoology please select an option below:
-                            </div>
-                            <div>
-                                <a aria-label="Parents" href="/en-US/Login/Parent">
-                                    <img alt="Parents" src="/assets/images/schoology/parentsBTN.png" style="max-width: 250px">
-                                </a> &nbsp;
-                                <a aria-label="Students" href="/en-US/Student/Login">
-                                        <img alt="Students" src="/assets/images/schoology/studentsBTN.png" style="max-width: 250px">
-                                    </a>
-                                &nbsp;
-                                <a aria-label="Employees" href="https://lms.lausd.net/login/saml">
-                                    <img alt="Employees" src="/assets/images/schoology/employees.png" style="max-width: 250px">
-                                </a>
-                                <a aria-label="K2 Students" href="https://app.schoology.com/login/qr?lang=en-US">
-                                    <img alt="K2 Students" src="/assets/images/schoology/QRBtn.png" style="max-width: 250px">
-                                </a>
-
-                            </div>
-                        </div>
-                    </div>
-                    <div class="text-center" style="margin-top: 150px; font-size: 17px;color:#2374c1">
-                        <div style="margin-bottom: 13px">
-                            Forgot your password for Students or Employees <a href="https://mylogin.lausd.net" style="color: #2374c1;text-decoration: underline ">CLICK HERE</a>
-                        </div>
-                        <div>
-                            Forgot your password for Parents <a href="https://parentws.lausd.net/parentauthen/resetPass2.jsp?lang=en" style="color: #2374c1;text-decoration: underline ">CLICK HERE</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div id="footerPlaceholder" style="padding-top:5%;">
-                    <div id="headerf">
-                        <div id="footertext" class="text-center" style="padding-bottom: 30px">
-                            Information Technology Division <br> &copy; 2019 Los Angeles Unified School District
-                            <div style="margin-top: 20px;" class="footerlink">
-                                <a href="http://achieve.lausd.net/Page/11844">Website Accessibility for Users with Disabilities</a>
-                            </div>
-                            <div style="margin-top: 10px;" class="footerlink">
-                                <a href="http://achieve.lausd.net/Page/10826">Nondiscrimination Policy</a><span style="padding-left: 4px;padding-right: 4px">|</span>
-                                <a href="https://parentportalapp.lausd.net/parentaccess/disclaimer.do">Disclaimer</a><span style="padding-left: 4px;padding-right: 4px">|</span>
-                                <a href="https://achieve.lausd.net/Page/12418">Responsible Use Policy</a>
-                            </div>
-                        </div>
-                    </div>
-                    <script type="text/javascript">
-                        /*<![CDATA[*/
-                        (function () {
-                            var sz = document.createElement('script'); sz.type = 'text/javascript'; sz.async = true;
-                            sz.src = '//siteimproveanalytics.com/js/siteanalyze_6014947.js';
-                            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(sz, s);
-                        })();
-                                                                /*]]>*/
-
-                    </script>
-
-                </div>
-            </div>
-        </div>
+    <div class="nav-secondary">
+      <div class="search-box">
+        <input type="text" id="searchInput" placeholder="Titles, people, genres">
+        <svg class="search-icon" onclick="toggleSearch()" viewBox="0 0 24 24" fill="white">
+          <path d="M14 2a8 8 0 0 1 5.657 13.657l4.197 4.197a1 1 0 0 1-1.414 1.414l-4.197-4.197A8 8 0 1 1 14 2zm0 2a6 6 0 1 0 0 12 6 6 0 0 0 0-12z"/>
+        </svg>
+      </div>
+      <button class="profile-icon" id="profileIcon"></button>
     </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero-section" id="heroSection">
+    <div class="hero-content">
+      <h1 class="hero-title" id="heroTitle"></h1>
+      <div class="hero-buttons">
+        <button class="hero-button play" onclick="playFeaturedMedia()">
+          ▶ Play
+        </button>
+        <button class="hero-button more" onclick="showFeaturedDetails()">
+          More Info
+        </button>
+      </div>
+      <p class="hero-description" id="heroDescription"></p>
+    </div>
+  </section>
+
+  <!-- Dynamic Genre Sections -->
+  <div id="movieGenres"></div>
+  <div id="tvShowGenres" style="display: none;"></div>
+
+  <!-- Modal -->
+  <div id="playerModal" class="modal">
+    <div class="modal-content">
+      <button class="modal-close" onclick="closeModal()">×</button>
+      <div class="video-container">
+        <iframe id="player" frameborder="0" allowfullscreen></iframe>
+      </div>
+      <div id="mediaInfo"></div>
+      <div id="seasonEpisodeSelection" style="display: none;">
+        <select id="seasonSelect"></select>
+        <div id="episodeList"></div> 
+      </div>
+    </div>
+  </div>
+
+  <script src="constants.js"></script>
+  <script src="utils.js"></script>
+  <script src="api.js"></script>
+  <script src="ui.js"></script>
+  <script src="main.js"></script>
 </body>
-
 </html>
