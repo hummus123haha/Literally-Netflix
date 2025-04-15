@@ -130,7 +130,7 @@ body {
   padding: 0 3%;
   display: flex;
   align-items: center;
-  margin-bottom: 15px;  
+  margin-bottom: 48px;    
   overflow: hidden;
 }
 
@@ -229,7 +229,7 @@ body {
   width: 150px;
   min-width: 150px;
   max-width: 150px;
-  border-radius: 0;
+  border-radius: 0;  
   cursor: pointer;
   transition: transform 0.3s ease;
   position: relative;
@@ -572,7 +572,7 @@ body {
 }
 
 .episode-number {
-  margin-right: 20px;
+  margin-right: 36px; 
 }
 
 /* Adjustments for genre sections */
